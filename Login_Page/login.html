@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="overall.css" rel="stylesheet">
-    <link href="login.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Swap & Share</title>
+  <link rel="stylesheet" href="login.css"> 
 </head>
 <body>
-    
+  <div class="login-container">
+    <h1>Swap & Share Login</h1>
+    <form action="/login" method="post">
+      
+      <label for="userid">User ID</label>
+      <input type="text" id="userid" name="userid" required>
+
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      
+      <button type="submit">Login</button>
+      <p><a href="/forgot-password">Forgot Password?</a></p>
+    </form>
+  </div>
 </body>
 </html>
