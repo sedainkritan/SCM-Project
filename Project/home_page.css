@@ -18,3 +18,7 @@ body{
 .nav-bar:hover{
     transform: scale(1.1);
 }
+
+#browseItemButton {
+    text-decoration: none;
+}
