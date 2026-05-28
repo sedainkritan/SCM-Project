@@ -28,7 +28,6 @@ header {
   color: #222;
 }
 
-<<<<<<< HEAD
 .logo span {
   font-size: 24px;
 }
@@ -173,7 +172,8 @@ nav a.active::after {
 
 .color-box h3 {
   font-size: 28px;
-=======
+}
+
 #browseItemButton {
     text-decoration: none;
 }
@@ -187,5 +187,4 @@ nav a.active::after {
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
->>>>>>> 862bcac9911e08e48ed80bbf0bb78f3a03782965
 }
