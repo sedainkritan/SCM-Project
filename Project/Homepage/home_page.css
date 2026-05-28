@@ -28,7 +28,6 @@ header {
   color: #222;
 }
 
-<<<<<<< HEAD
 .logo span {
   font-size: 24px;
 }
@@ -173,10 +172,15 @@ nav a.active::after {
 
 .color-box h3 {
   font-size: 28px;
-=======
+}
+.color-box p {
+  font-size: 18px;
+}
+
 #browseItemButton {
     text-decoration: none;
 }
+
 
 .success-btn{
   padding: 3px 12px;
@@ -186,6 +190,5 @@ nav a.active::after {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
->>>>>>> 862bcac9911e08e48ed80bbf0bb78f3a03782965
+ transition: background-color 0.3s ease, transform 0.2s ease;
 }
