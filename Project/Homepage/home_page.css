@@ -173,9 +173,12 @@ nav a.active::after {
 .color-box h3 {
   font-size: 28px;
 }
+<<<<<<< HEAD
 .color-box p {
   font-size: 18px;
 }
+=======
+>>>>>>> dd54ea6277346bcbba3e7a6c6df43e317f514a57
 
 #browseItemButton {
     text-decoration: none;
@@ -190,5 +193,9 @@ nav a.active::after {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
+<<<<<<< HEAD
  transition: background-color 0.3s ease, transform 0.2s ease;
+=======
+  transition: background-color 0.3s ease, transform 0.2s ease;
+>>>>>>> dd54ea6277346bcbba3e7a6c6df43e317f514a57
 }
