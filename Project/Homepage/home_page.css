@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+  padding: 30px;
+}
+
+/* Navbar */
+
+header {
+  width: 100%;
+  background: white;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  color: #222;
+}
+
+.logo span {
+  font-size: 24px;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 18px;
+  color: #222;
+  font-size: 20px;
+  position: relative;
+}
+
+nav a.active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: black;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.signup {
+  background: white;
+  border: 1px solid #1f5fa8;
+}
+
+.login {
+  background: #1f5fa8;
+  color: white;
+  border: none;
+}
+
+/* Hero Section */
+
+.hero {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+.left {
+  width: 50%;
+}
+
+.left h1 {
+  font-size: 70px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.left hr {
+  margin-bottom: 25px;
+}
+
+.left p {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.start-btn {
+  background: #2f8b4f;
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  font-size: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.browse-btn {
+  background: white;
+  border: 2px solid #888;
+  padding: 18px 35px;
+  font-size: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.right img {
+  width: 500px;
+}
+
+/* Colors */
+
+.colors {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.color-box {
+  text-align: center;
+}
+
+.circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.green {
+  background: #2f8b4f;
+}
+
+.lightgreen {
+  background: #78bca4;
+}
+
+.orange {
+  background: #f28c1b;
+}
+
+.white {
+  background: #eee;
+  border: 2px solid #ccc;
+}
+
+.dark {
+  background: #555;
+}
+
+.color-box h3 {
+  font-size: 28px;
+}

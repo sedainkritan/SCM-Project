@@ -1,0 +1,125 @@
+/* books-media.css */
+
+/* 🌐 Global Styles */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f9fafc;
+  color: #1a2a44;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🏷️ Category Section */
+.category-page {
+  text-align: center;
+  padding: 0; /* reduced padding */
+  margin: 0;
+}
+
+.category-page h1 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+.category-page p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* 🛍️ Items Grid */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+  gap: 20px; /* no spacing between cards */
+  justify-items: center;
+  padding: 0 5px;
+}
+
+
+/* 📦 Item Card */
+.item-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 200px; /* narrower cards */
+  text-align: center;
+  padding: 12px; /* reduced padding */
+}
+
+.item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.item-card img {
+  width: 150px;
+  height: 150px; /* smaller image height */
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* 🧾 Item Text */
+.item-card h3 {
+  font-size: 1rem;
+  color: #003366;
+  margin-bottom: 1px;
+}
+
+.item-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* 🔘 Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.exchange-btn,
+.shop-btn {
+  padding: 3px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.exchange-btn {
+  background-color: #003366;
+  color: #fff;
+}
+
+.exchange-btn:hover {
+  background-color: #004c99;
+  transform: scale(1.05);
+}
+
+.shop-btn {
+  background-color: #f0f0f0;
+  color: #003366;
+}
+
+.shop-btn:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .category-page h1 {
+    font-size: 1.6rem;
+  }
+  .items-grid {
+    gap: 10px;;
+  }
+}
