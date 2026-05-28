@@ -1,117 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="electronics-accessories.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="electronics-accessories.css">
 </head>
 <body>
-<section class="category-page">
-  <h1>Electronics Accessories</h1>
-  <p>Explore practical electronics add‑ons to upgrade your daily tech experience</p>
-
-  <div class="items-grid">
-    <div class="item-card">
-      <img src="sonymetalheadphone.png" alt="Electronics Items" />
-      <h3>Sony Metal Headphone</h3>
-      <p>6 months used | Excellent condition</p>
-      <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-         <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
-      </div>
-    </div>
-
-    <div class="item-card">
-      <img src="googlepixal.png" alt="Book Cover" />
-      <h3>Google Pixel10 Pro</h3>
-      <p>Purchase: Aug 2025 | Storage: 512GB | Warranty: 1 year</p>
-      <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-        <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
-      </div>
-    </div>
-
-    <div class="item-card">
-      <img src="portPowerbank.png" alt="Electronics Accesories" />
-      <h3>Portable Powerbank </h3>
-      <p>Capacity: 5,000 mAh | Fast Charging: Yes | Ports: Dual USB </p>
-      <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-        <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
-      </div>
-    </div>
-
-    <div class="item-card">
-      <img src="sdcard.png" alt="Electronics Accesories">
-      <h3>SanDisk Memorycard</h3>
-      <p>Capacity: 1TB | Speed: 170MB/s | Condition: Like new</p>
-    <div class="buttons">
-      <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-      <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
-    </div>
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for items...">
+    <button onclick="searchItems()">Find Items</button>
   </div>
 
-  <div class="item-card">
-      <img src="watch.png" alt="Electronics Accessories" />
-      <h3>Patek Philippe </h3>
-      <p>Brand: Patek Philippe | Model: Nautilus 5711| Warranty: 2 years</p>
-    <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-        <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
-      </div>
-    </div>
+  <!-- Message for unavailable items -->
+  <p id="message"></p>
 
-    <div class="item-card">
-      <img src="phonecase.png" alt="Electronics Accesories" />
-      <h3>Iphone 15 ProMax Case</h3>
-      <p>iPhone 15 Pro Max Case | Material: Silicone</p>
-    <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-        <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
-      </div>
-    </div>
+  <!-- Category Section -->
+  <section class="category-page">
+    <h1>Electronics Accessories</h1>
+    <p>Explore practical electronics add‑ons to upgrade your daily tech experience</p>
 
-    <div class="item-card">
-      <img src="charger.png" alt="Book Cover" />
-      <h3>Iphone Charger</h3>
-      <p>Generic | Model: Lightning Cable | Length: 1m </p>
-      <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-        <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+    <div class="items-grid">
+      <div class="item-card">
+        <img src="sonymetalheadphone.png" alt="Electronics Items" />
+        <h3>Sony Metal Headphone</h3>
+        <p>6 months used | Excellent condition</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
       </div>
-    </div>
 
-    <div class="item-card">
-      <img src="infinix .png" alt="Book Cover" />
-      <h3>Infinix Hot60 </h3>
-      <p>Display Change | 1 year Warranty | Original packaging</p>
-      <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-        <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+      <div class="item-card">
+        <img src="googlepixal.png" alt="Book Cover" />
+        <h3>Google Pixel10 Pro</h3>
+        <p>Purchase: Aug 2025 | Storage: 512GB | Warranty: 1 year</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
       </div>
-    </div>
 
-    <div class="item-card">
-      <img src="studylamp.png" alt="Book Cover" />
-      <h3>Study Lamp </h3>
-      <p>Purchase: 2023 | Working Condition | Perfect for Kids</p>
-      <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-        <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+      <div class="item-card">
+        <img src="portPowerbank.png" alt="Electronics Accesories" />
+        <h3>Portable Powerbank</h3>
+        <p>Capacity: 5,000 mAh | Fast Charging: Yes | Ports: Dual USB</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
       </div>
-    </div>
 
-<div class="item-card">
-      <img src="earphone.png" alt="Electronics Accesories" />
-      <h3>Redmi Earphone </h3>
-      <p>Flexible | High Sound quality | Creamy color</p>
-      <div class="buttons">
-        <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
-        <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+      <div class="item-card">
+        <img src="sdcard.png" alt="Electronics Accesories">
+        <h3>SanDisk Memorycard</h3>
+        <p>Capacity: 1TB | Speed: 170MB/s | Condition: Like new</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="watch.png" alt="Electronics Accessories" />
+        <h3>Patek Philippe</h3>
+        <p>Brand: Patek Philippe | Model: Nautilus 5711 | Warranty: 2 years</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="phonecase.png" alt="Electronics Accesories" />
+        <h3>Iphone 15 ProMax Case</h3>
+        <p>iPhone 15 Pro Max Case | Material: Silicone</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="charger.png" alt="Book Cover" />
+        <h3>Iphone Charger</h3>
+        <p>Generic | Model: Lightning Cable | Length: 1m</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="infinix.png" alt="Book Cover" />
+        <h3>Infinix Hot60</h3>
+        <p>Display Change | 1 year Warranty | Original packaging</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="studylamp.png" alt="Book Cover" />
+        <h3>Study Lamp</h3>
+        <p>Purchase: 2023 | Working Condition | Perfect for Kids</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
+      </div>
+
+      <div class="item-card">
+        <img src="earphone.png" alt="Electronics Accesories" />
+        <h3>Redmi Earphone</h3>
+        <p>Flexible | High Sound quality | Creamy color</p>
+        <div class="buttons">
+          <a class="exchange-btn" href="../Chatbox/chatbox.html">Exchange</a>
+          <a class="shop-btn" href="../Chatbox/chatbox2.html">Buy</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Link JS -->
+  <script src="electronics.js"></script>
 </body>
 </html>

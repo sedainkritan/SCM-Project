@@ -3,48 +3,48 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9fafc; /* light neutral background */
-  color: #333;
+  background-color: #f4fdf7; /* soft eco-friendly background */
+  color: #2e2e2e;
 }
 
 /* Section Headings */
 h1, h2 {
-  color: #003366; /* deep blue theme */
+  color: #1b5e20; /* deep green theme */
   text-align: center;
   margin-bottom: 15px;
 }
 
 p {
   text-align: center;
-  color: #555;
+  color: #4f4f4f;
   margin-bottom: 15px; /* reduced from 30px to tighten spacing */
 }
 
-.browse-container {
+/* .browse-container {
   text-align: center;
   padding: 40px 20px;
-}
+} */
 
 .browse-container h2 {
   margin-top: 0; /* remove extra gap above featured section */
 }
 
-.search-bar {
+/* .search-bar {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin: 10px 0; /* smaller vertical spacing */
-}
+} */
 
 .search-bar input,
 .search-bar select {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #a5d6a7; /* light green border */
   border-radius: 4px;
 }
 
 .search-bar button {
-  background-color: #003366;
+  background-color: #2e7d32; /* strong green */
   color: white;
   border: none;
   padding: 10px 10px;
@@ -61,7 +61,7 @@ p {
 
 .discover-item {
   text-decoration: none;
-  color: #333;
+  color: #2e2e2e;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 250px;
 }
@@ -78,7 +78,7 @@ p {
   margin-top: 10px;
   font-size: 16px;
   font-weight: 600;
-  color: #003366;
+  color: #1b5e20; /* deep green */
 }
 
 .discover-item:hover {

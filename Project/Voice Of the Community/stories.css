@@ -1,8 +1,8 @@
 :root {
-  --primary: #003366;
-  --accent: #007bff;
-  --background: #f5f5f5;
-  --text: #333;
+  --primary: #1b5e20;       /* deep green */
+  --accent: #2e7d32;        /* strong green */
+  --background: #f4fdf7;    /* soft eco-friendly background */
+  --text: #1b3d2f;          /* earthy text */
 }
 
 body {
@@ -30,7 +30,7 @@ h1 {
 }
 
 .story-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 15px;
@@ -42,7 +42,6 @@ h1 {
   color: inherit;
   display: block;
 }
-
 
 .story-card:hover {
   transform: scale(1.05);
