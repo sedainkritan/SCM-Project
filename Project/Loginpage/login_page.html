@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Login</title>
+  <link rel="stylesheet" href="login_page.css">
+  <!-- ✅ Make sure auth.js is in the same folder (Loginpage) -->
+  <script src="auth.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Swap & Share</h1>
-        <div class="login">
-            <p>Login to your account</p>
-            
-            <input type="text" placeholder="Email address or phone number" id="username" required><br>
-            <input type="password" placeholder="Password" id="password" required><br>
-            <button id="loginBtn">Login</button>
-                
-            <div class="account">
-                <a href="#">Forgotten account?</a>
-                <a href="#">Sign up for Swap & Share</a>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <div class="auth-container">
+    <h2>Login</h2>
+    <!-- ✅ Calls login(event) from auth.js -->
+    <form onsubmit="login(event)">
+      <div class="input-group">
+        <input type="text" id="loginEmail" placeholder=" " required>
+        <label>Email / Username</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="loginPassword" placeholder=" " required>
+        <label>Password</label>
+      </div>
+      <label class="checkbox"><input type="checkbox" id="remember"> Remember Me</label>
+      <button type="submit">Login</button>
+
+      <!-- ✅ Correct links to other pages -->
+      <a href="forgetpsw.html" class="link">Forgot Password?</a>
+      <a href="sign-uppage.html" class="link">Create Account</a>
+    </form>
+  </div>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup</title>
+  <!-- You can keep using login_page.css, or create a separate signup_page.css if you want -->
+  <link rel="stylesheet" href="login_page.css">
+  <!-- ✅ auth.js is in the same Loginpage folder -->
+  <script src="auth.js"></script>
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Signup</h2>
+    <!-- ✅ Calls signup(event) from auth.js -->
+    <form onsubmit="signup(event)">
+      <div class="input-group">
+        <input id="fullname" placeholder=" " required>
+        <label>Full Name</label>
+      </div>
+      <div class="input-group">
+        <input id="username" placeholder=" " required>
+        <label>Username</label>
+      </div>
+      <div class="input-group">
+        <input id="email" type="email" placeholder=" " required>
+        <label>Email</label>
+      </div>
+      <div class="input-group">
+        <input id="password" type="password" placeholder=" " required>
+        <label>Password</label>
+      </div>
+      <div class="input-group">
+        <input id="confirm" type="password" placeholder=" " required>
+        <label>Confirm Password</label>
+      </div>
+
+      <label class="checkbox">
+        <input type="checkbox" required> I agree to Terms & Conditions
+      </label>
+
+      <button type="submit">Signup</button>
+
+      <!-- ✅ Add link back to login page -->
+      <p style="margin-top:10px;">
+        Already have an account? <a href="login_page.html">Log In</a>
+      </p>
+    </form>
+  </div>
+</body>
+</html>

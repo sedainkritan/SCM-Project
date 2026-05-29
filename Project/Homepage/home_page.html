@@ -9,89 +9,82 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <header>
-    <div class="logo">
-      ♻️ <span>Swap&Share</span>
+    <div class="logo" aria-hidden="false">
+      <img id="site-logo" src="image.png" alt="Swap & Share logo placeholder">
+      <span>Swap&Share</span>
     </div>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="" class="active">Home</a>
       <a href="../BrowseItem/Main Page/browseItems_page.html">Browse Items</a>
-      <a href="#">How It Works</a>
+      <a href="../HowItWorks Page/howitworks.html">How It Works</a>
       <a href="../Voice Of the Community/stories.html">Community</a>
       <a href="../FAQ page/FAQ_page.html">FAQ</a>
     </nav>
 
-    <div class="buttons">
-      <button class="signup">Sign Up</button>
-      <button class="login">Log In</button>
+    <div class="auth-area" id="auth-area">
+      <!-- visible when logged out -->
+      <div id="auth-buttons" style="display:flex; gap:10px; align-items:center;">
+        <button class="btn signup" id="btn-signup" type="button" onclick="window.location='../Loginpage/sign-uppage.html'">Sign Up</button>
+        <button class="btn login" id="btn-login" type="button" onclick="window.location='../Loginpage/login_page.html'">Log In</button>
+      </div>
+
+      <!-- visible when logged in -->
+      <div id="profile-block" class="profile" style="display:none;">
+        <button id="avatar-btn" class="avatar" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu" title="Open profile">
+          <img id="avatar-img" src="newwwwwwwww.jpg" alt="Your avatar">
+        </button>
+        <div style="text-align:right;">
+          <div id="profileName" style="font-weight:700;">EverBot</div>
+          <div id="profileEmail" class="muted" style="font-size:13px;">Member since 2024</div>
+        </div>
+
+        <!-- ✅ Updated profile menu -->
+        <div id="profile-menu" class="profile-menu" role="menu" aria-hidden="true" aria-labelledby="avatar-btn">
+          <a href="#" role="menuitem" id="menu-stats">My Stats</a>
+          <a href="#" role="menuitem" id="menu-logout">Log out</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-
+  <section class="hero" aria-labelledby="hero-heading">
     <div class="left">
-      <h1>Swap More. Waste Less.</h1>
-
+      <h1 id="hero-heading">Swap More. Waste Less.</h1>
       <hr>
-
-      <p>
-        Exchange items & share resources with your community.
-      </p>
+      <p>Exchange items & share resources with your community.</p>
 
       <div class="hero-buttons">
-        <button class="start-btn">Start Swapping</button>
-       <a href="../BrowseItem/Main Page/browseItems_page.html">
-         <button class="browse-btn">Browse Items</button>
-       </a>
+        <button class="start-btn" id="start-swap">Start Swapping</button>
+        <a class="button-link" href="../BrowseItem/Main Page/browseItems_page.html">
+          <button class="browse-btn" type="button">Browse Items</button>
+        </a>
       </div>
     </div>
 
-    <div class="right">
-      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="people">
+    <div class="right" aria-hidden="false">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Illustration of people exchanging items">
     </div>
 
+    <h2 id="welcome" style="text-align:center; margin-top:20px;"></h2>
   </section>
 
-  <!-- Color Section -->
-  <!-- <section class="colors">
-
-    <div class="color-box">
-      <div class="circle green"></div>
-      <h3>Primary</h3>
-    </div>
-
-    <div class="color-box">
-      <div class="circle lightgreen"></div>
-      <h3>Secondary</h3>
-    </div>
-
-    <div class="color-box">
-      <div class="circle orange"></div>
-      <h3>Accent</h3>
-    </div>
-
-    <div class="color-box">
-      <div class="circle white"></div>
-      <h3>Light Background</h3>
-    </div>
-
-    <div class="color-box">
-      <div class="circle dark"></div>
-      <h3>Neutral</h3>
-    </div> -->
-
+  <!-- ✅ Hidden stats section -->
+  <section id="user-stats" style="display:none; margin:20px; padding:15px; border:1px solid #ccc;">
+    <h3>Your Activity</h3>
+    <p id="exchangeCount">Successful Exchanges: 0</p>
+    <p id="purchaseCount">Purchases: 0</p>
   </section>
 
+  <!-- ✅ Correct path to auth.js inside Loginpage -->
+  <script src="../Loginpage/auth.js"></script>
   <script src="home_page.js"></script>
-    <button id="browseItemButton"><a href="../BrowseItem/Main Page/browseItems_page.html">Browse Items</a></button>
-    <button id="faqqpagw"><a href="../FAQ page/FAQ_page.html">FAQ</a></button>
-    <a class="success-btn" href="../Swap & Share Success Story/stories.html">Success Stories</a>
-     <!-- Home, Profile, Registration, About -->
-    <div id="header"></div>
-    <div id="footer"></div>
-    <script src="include.js"></script>
+  <script>
+    window.onload = function() {
+      loadHomepage(); // runs the toggle logic from auth.js
+    };
+  </script>
+
 </body>
 </html>

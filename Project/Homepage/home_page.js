@@ -1,15 +1,106 @@
-// Active menu effect
+(function(){
+  const authButtons = document.getElementById('auth-buttons');
+  const profileBlock = document.getElementById('profile-block');
+  const avatarBtn = document.getElementById('avatar-btn');
+  const profileMenu = document.getElementById('profile-menu');
+  const menuLogout = document.getElementById('menu-logout');
+  const menuStats = document.getElementById('menu-stats'); // new menu item
+  const profileName = document.getElementById('profileName');
+  const profileEmail = document.getElementById('profileEmail');
+  const welcome = document.getElementById('welcome');
+  const statsSection = document.getElementById('user-stats'); // hidden section
+  const exchangeCount = document.getElementById('exchangeCount');
+  const purchaseCount = document.getElementById('purchaseCount');
 
-const navLinks = document.querySelectorAll("nav a");
+  function getUser(){
+    return JSON.parse(localStorage.getItem("sessionUser")) || JSON.parse(sessionStorage.getItem("sessionUser"));
+  }
 
-navLinks.forEach(link => {
-  link.addEventListener("click", function () {
+  function showLoggedIn(user){
+    authButtons.style.display = 'none';
+    profileBlock.style.display = 'flex';
+    avatarBtn.setAttribute('tabindex','0');
 
-    navLinks.forEach(item => {
-      item.classList.remove("active");
-    });
+    if(user){
+      profileName.textContent = user.username;
+      profileEmail.textContent = user.email;
+      if(welcome) welcome.textContent = `Welcome back, ${user.username}`;
+    }
+  }
 
-    this.classList.add("active");
+  function showLoggedOut(){
+    authButtons.style.display = 'flex';
+    profileBlock.style.display = 'none';
+    avatarBtn.setAttribute('tabindex','-1');
+    hideMenu();
+    if(welcome) welcome.textContent = '';
+    if(statsSection) statsSection.style.display = 'none';
+  }
 
+  function toggleMenu(){
+    const shown = profileMenu.classList.toggle('show');
+    profileMenu.setAttribute('aria-hidden', String(!shown));
+    avatarBtn.setAttribute('aria-expanded', String(shown));
+  }
+
+  function hideMenu(){
+    profileMenu.classList.remove('show');
+    profileMenu.setAttribute('aria-hidden','true');
+    avatarBtn.setAttribute('aria-expanded','false');
+  }
+
+  // Initialize UI
+  const user = getUser();
+  if(user) showLoggedIn(user); else showLoggedOut();
+
+  // Avatar toggles menu
+  avatarBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    toggleMenu();
   });
-});
+
+  // Keyboard support
+  avatarBtn.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+    if (e.key === 'Escape') hideMenu();
+  });
+
+  // Logout
+  menuLogout.addEventListener('click', function(e){
+    e.preventDefault();
+    logout(); // from auth.js
+  });
+
+  // Show stats
+  if(menuStats){
+    menuStats.addEventListener('click', function(e){
+      e.preventDefault();
+      const user = getUser();
+      if(user){
+        let exchanges = user.exchanges || 0;
+        let purchases = user.purchases || 0;
+        exchangeCount.textContent = `Successful Exchanges: ${exchanges}`;
+        purchaseCount.textContent = `Purchases: ${purchases}`;
+        statsSection.style.display = 'block';
+        hideMenu(); // close dropdown after click
+      }
+    });
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e){
+    if (!profileMenu.contains(e.target) && !avatarBtn.contains(e.target)) hideMenu();
+  });
+
+  // Close menu on Escape globally
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') hideMenu();
+  });
+
+  // Keep focus tidy
+  profileMenu.addEventListener('focusout', function(){
+    setTimeout(() => {
+      if (!profileMenu.contains(document.activeElement) && document.activeElement !== avatarBtn) hideMenu();
+    }, 10);
+  });
+})();
