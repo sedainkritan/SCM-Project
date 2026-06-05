@@ -4,11 +4,11 @@
   const avatarBtn = document.getElementById('avatar-btn');
   const profileMenu = document.getElementById('profile-menu');
   const menuLogout = document.getElementById('menu-logout');
-  const menuStats = document.getElementById('menu-stats'); // new menu item
+  const menuStats = document.getElementById('menu-stats');
   const profileName = document.getElementById('profileName');
   const profileEmail = document.getElementById('profileEmail');
   const welcome = document.getElementById('welcome');
-  const statsSection = document.getElementById('user-stats'); // hidden section
+  const statsSection = document.getElementById('user-stats');
   const exchangeCount = document.getElementById('exchangeCount');
   const purchaseCount = document.getElementById('purchaseCount');
 
@@ -49,6 +49,19 @@
     avatarBtn.setAttribute('aria-expanded','false');
   }
 
+  // ✅ New logout function
+  function logout(){
+    // Clear session data
+    localStorage.removeItem("sessionUser");
+    sessionStorage.removeItem("sessionUser");
+
+    // Reset UI
+    showLoggedOut();
+
+    // Redirect back to homepage
+    window.location.href = "./home_page.html";
+  }
+
   // Initialize UI
   const user = getUser();
   if(user) showLoggedIn(user); else showLoggedOut();
@@ -68,7 +81,7 @@
   // Logout
   menuLogout.addEventListener('click', function(e){
     e.preventDefault();
-    logout(); // from auth.js
+    logout();
   });
 
   // Show stats
@@ -82,7 +95,7 @@
         exchangeCount.textContent = `Successful Exchanges: ${exchanges}`;
         purchaseCount.textContent = `Purchases: ${purchases}`;
         statsSection.style.display = 'block';
-        hideMenu(); // close dropdown after click
+        hideMenu();
       }
     });
   }
