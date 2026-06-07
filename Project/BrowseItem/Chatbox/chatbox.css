@@ -1,8 +1,8 @@
 /* General layout */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9fafc;
-  color: #1a2a44;
+  background-color: #f4fdf7; /* soft eco-friendly background */
+  color: #1b3d2f; /* deep earthy text */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@ body {
   width: 100%;
   max-width: 420px;
   height: 90vh;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   display: flex;
@@ -24,13 +24,13 @@ body {
 
 /* Header section */
 .chat-header {
-  background: #003366;
+  background: #2e7d32; /* strong green */
   color: #fff;
   display: flex;
   align-items: center;
   padding: 6px 10px;
   height: 55px;
-  border-bottom: 1px solid #d8c3a5;
+  border-bottom: 1px solid #a5d6a7; /* light green border */
 }
 
 .profile-pic {
@@ -48,13 +48,13 @@ body {
 .user-info p {
   font-size: 12px;
   margin: 0;
-  color: #ddd9d2;
+  color: #c8e6c9; /* soft green text */
 }
 
 /* Chat body */
 .chat-body {
   flex: 1;
-  background: #ddd9d0;
+  background: #e8f5e9; /* light green background */
   padding: 10px;
   overflow-y: auto;
   display: flex;
@@ -72,12 +72,12 @@ body {
 }
 
 .sent {
-  background: #eeebe7;
+  background: #c8e6c9; /* soft green for sent */
   align-self: flex-end;
 }
 
 .received {
-  background: #fff;
+  background: #ffffff;
   align-self: flex-start;
 }
 
@@ -85,7 +85,7 @@ body {
 .chat-input {
   display: flex;
   padding: 8px;
-  background: #4d81e2;
+  background: #1b5e20; /* deep green */
 }
 
 .chat-input input {
@@ -97,7 +97,7 @@ body {
 }
 
 .chat-input button {
-  background: #d8c3a5;
+  background: #a5d6a7; /* light green button */
   border: none;
   padding: 8px 12px;
   margin-left: 8px;

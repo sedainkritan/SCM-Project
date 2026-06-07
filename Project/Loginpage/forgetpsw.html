@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="login_page.css">
+  <!-- ✅ auth.js is in the same Loginpage folder -->
+  <script src="auth.js"></script>
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Reset Password</h2>
+    <!-- ✅ Calls resetPassword(event) from auth.js -->
+    <form onsubmit="resetPassword(event)">
+      <div class="input-group">
+        <input id="resetEmail" type="email" placeholder=" " required>
+        <label>Email</label>
+      </div>
+      <div class="input-group">
+        <input id="newPassword" type="password" placeholder=" " required>
+        <label>New Password</label>
+      </div>
+      <button type="submit">Reset Password</button>
+
+      <!-- ✅ Link back to login page -->
+      <a href="login_page.html" class="link">Back to Login</a>
+    </form>
+  </div>
+</body>
+</html>
