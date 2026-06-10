@@ -1,34 +1,38 @@
-// electronics-accessories.js
+const searchInput = document.getElementById('searchInput');
+const itemCards = document.querySelectorAll('.item-card');
+const message = document.getElementById('message');
 
-function searchItems() {
-  let input = document.getElementById("searchInput").value.toLowerCase().trim();
-  let items = document.querySelectorAll(".item-card");
-  let found = false;
+function filterItems() {
+  const searchText = searchInput.value.toLowerCase().trim();
+  let visibleCount = 0;
 
-  items.forEach(item => {
-    // Get both the name (h3) and description (p) text
-    let name = item.querySelector("h3") ? item.querySelector("h3").textContent.toLowerCase() : "";
-    let desc = item.querySelector("p") ? item.querySelector("p").textContent.toLowerCase() : "";
+  itemCards.forEach(card => {
+    const name = card.querySelector('h3').textContent.toLowerCase();
+    const description = card.querySelector('p').textContent.toLowerCase();
 
-    // Check if input matches any part of name or description
-    if ((name.includes(input) || desc.includes(input)) && input !== "") {
-      item.style.display = "block";
-      found = true;
-    } else {
-      item.style.display = "none";
-    }
+    const matches = name.includes(searchText) || description.includes(searchText);
+
+    card.style.display = matches ? '' : 'none';
+    if (matches) visibleCount++;
   });
 
-  let message = document.getElementById("message");
-  if (!found && input !== "") {
-    message.textContent = "Sorry, the item is not available currently.";
+  // Show message if nothing found
+  if (visibleCount === 0 && searchText !== '') {
+    message.textContent = `No items found for "${searchInput.value}"`;
   } else {
-    message.textContent = "";
-  }
-
-  // Reset view if search is empty
-  if (input === "") {
-    items.forEach(item => item.style.display = "block");
-    message.textContent = "";
+    message.textContent = '';
   }
 }
+
+// Search as you type (no button needed)
+searchInput.addEventListener('input', filterItems);
+
+// Button click
+function searchItems() {
+  filterItems();
+}
+
+// Enter key
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') filterItems();
+});
