@@ -169,5 +169,8 @@ a.button-link{ text-decoration:none; }
     }
 
     /* focus outlines for keyboard users */
-    .btn:focus, .avatar:focus, nav a:focus { outline: 3px solid rgba(47,139,79,0.12); outline-offset:3px; }
-  </style>
+    .btn:focus, .avatar:focus, nav a:focus {
+       outline: 3px solid rgba(47,139,79,0.12);
+       outline-offset:3px; 
+      }
+    }
