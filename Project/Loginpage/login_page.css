@@ -5,7 +5,7 @@
 body {
   display:flex; justify-content:center; align-items:center;
   min-height:100vh;
-  background:linear-gradient(135deg,#e8f5e9,#c8e6c9); /* soft eco gradient */
+  background:linear-gradient(135deg,#1b5e20,#1b5e20); /* soft eco gradient */
 }
 
 .auth-container {
@@ -18,7 +18,7 @@ body {
   animation:fadeIn 0.6s ease;
 }
 
-h2 { text-align:center; color:#2e7d32; margin-bottom:20px; }
+h2 { text-align:center; color:#1b5e20; margin-bottom:20px; }
 
 .input-group {
   position:relative; margin:15px 0;
