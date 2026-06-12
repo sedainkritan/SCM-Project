@@ -5,5 +5,5 @@ async function loadComponent(id,file){
   }
 
   console.log("Header is loading")
-  loadComponent('header','../../BrowseItem/Header/header.html');
-  loadComponent('footer','../../BrowseItem/Header/footer.html');
+  loadComponent('header','../Header2/header.html');
+  loadComponent('footer','../Header2/footer.html');
