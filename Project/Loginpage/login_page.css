@@ -1,52 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
 
+/* ── CSS variables (required by header.css) ── */
+:root {
+  --card: #ffffff;
+  --radius: 12px;
+  --accent: #2f8b4f;
+  --accent-2: #1f5fa8;
+  --muted: #6b7280;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
 
 body {
-  display:flex; justify-content:center; align-items:center;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
   min-height:100vh;
-  background:linear-gradient(135deg,#1b5e20,#1b5e20); /* soft eco gradient */
+  background: #f4fdf7;
 }
 
+/* ── Auth card ── */
 .auth-container {
-  background:rgba(255,255,255,0.85);
+  background:rgba(255,255,255,0.92);
   backdrop-filter:blur(20px);
   border-radius:20px;
   padding:40px;
   width:350px;
-  box-shadow:0 8px 32px rgba(0,0,0,0.15);
+  box-shadow:0 8px 32px rgba(0,0,0,0.12);
   animation:fadeIn 0.6s ease;
+  margin: 40px auto;
 }
 
-h2 { text-align:center; color:#1b5e20; margin-bottom:20px; }
+.auth-container h2 { text-align:center; color:#1b5e20; margin-bottom:20px; }
 
 .input-group {
   position:relative; margin:15px 0;
 }
 .input-group input {
   width:100%; padding:12px;
-  border:none; outline:none;
+  border:1px solid #c8e6c9; outline:none;
   border-radius:10px;
-  background:#f4fdf7; /* soft eco background */
-  color:#1b3d2f; /* deep earthy text */
+  background:#f4fdf7;
+  color:#1b3d2f;
+  transition: border-color 0.3s;
 }
+.input-group input:focus { border-color:#2e7d32; }
 .input-group label {
   position:absolute; left:12px; top:12px;
-  color:#4f4f4f; transition:0.3s;
+  color:#4f4f4f; transition:0.3s; pointer-events:none;
 }
 .input-group input:focus + label,
 .input-group input:not(:placeholder-shown) + label {
   top:-8px; left:8px; font-size:12px; color:#2e7d32;
+  background:#fff; padding:0 4px;
 }
 
-button {
+/* Specific: submit button inside auth form */
+.auth-container .auth-submit-btn {
   width:100%; padding:12px;
   border:none; border-radius:10px;
   background:#2e7d32; color:#fff;
   font-weight:600; cursor:pointer;
-  transition:0.3s;
+  transition:background 0.3s;
+  margin-top:8px;
 }
-button:hover { background:#1b5e20; }
+.auth-container .auth-submit-btn:hover { background:#1b5e20; }
 
 .checkbox { color:#1b3d2f; font-size:14px; }
 
@@ -59,7 +79,7 @@ button:hover { background:#1b5e20; }
 }
 .toast.show { opacity:1; transform:translateY(-10px); }
 
-@keyframes fadeIn { 
-  from{opacity:0; transform:translateY(20px);} 
-  to{opacity:1; transform:translateY(0);} 
+@keyframes fadeIn {
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
 }

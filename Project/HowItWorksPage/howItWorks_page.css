@@ -1,0 +1,146 @@
+/* ── CSS variable definitions (must be first) ── */
+:root {
+  --card: #ffffff;
+  --radius: 12px;
+  --accent: #2f8b4f;
+  --accent-2: #1f5fa8;
+  --muted: #6b7280;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4fdf7;
+  color: #2e2e2e;
+}
+
+footer nav a {
+  font-size: 14px;
+  color: #0b1220;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.how-container {
+  padding: 48px 24px 32px;
+  text-align: center;
+}
+
+.how-container h1 {
+  color: #1b5e20;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.how-container > p {
+  color: #4f4f4f;
+  max-width: 580px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0 40px;
+}
+
+.step {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 28px 20px 24px;
+  border: 1px solid #a5d6a7;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+}
+
+.step-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #e9f3ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 24px;
+}
+
+.step h3 {
+  color: #1b5e20;
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.step p {
+  color: #4f4f4f;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.benefits {
+  background: #e9f3ef;
+  padding: 32px 40px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 680px;
+  border: 1px solid #a5d6a7;
+}
+
+.benefits h2 {
+  color: #1b5e20;
+  text-align: center;
+  margin: 0 0 20px;
+  font-size: 1.4rem;
+}
+
+.benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits li {
+  font-size: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #c8e6c9;
+  color: #2e2e2e;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.benefits li:last-child {
+  border-bottom: none;
+}
+
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: #2e7d32;
+  font-size: 15px;
+}

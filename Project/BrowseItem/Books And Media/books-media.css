@@ -1,13 +1,34 @@
-/* 🌐 Global Styles */
+/* ── CSS variables (required by header.css) ── */
+:root {
+  --card: #ffffff;
+  --radius: 12px;
+  --accent: #2f8b4f;
+  --accent-2: #1f5fa8;
+  --muted: #6b7280;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Prevent horizontal overflow (matches howItWorks_page.css) ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* Global Styles */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #f4fdf7; /* soft eco-friendly background */
-  color: #1b3d2f; /* deep earthy text */
+  background-color: #f4fdf7;
+  color: #1b3d2f;
   margin: 0;
   padding: 0;
 }
 
-/* 🔍 Search Bar */
+/* Search Bar */
 .search-container {
   display: flex;
   justify-content: center;
@@ -19,20 +40,19 @@ body {
 #searchInput {
   padding: 8px 12px;
   width: 250px;
-  border: 1px solid #c8e6c9; /* soft green border */
+  border: 1px solid #c8e6c9;
   border-radius: 6px;
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
-#searchInput:focus {
-  border-color: #2e7d32; /* strong green focus */
-}
+#searchInput:focus { border-color: #2e7d32; }
 
-.search-container button {
+/* Specific: search button in category pages */
+.search-container .search-submit-btn {
   padding: 8px 14px;
-  background-color: #2e7d32; /* strong green */
+  background-color: #2e7d32;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -41,21 +61,19 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.search-container button:hover {
-  background-color: #1b5e20; /* deeper green */
+.search-container .search-submit-btn:hover {
+  background-color: #1b5e20;
   transform: scale(1.05);
 }
 
-/* ❌ Message for unavailable items */
 #message {
   text-align: center;
-  color: #d32f2f; /* red for error */
+  color: #d32f2f;
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* 🏷️ Category Section */
+/* Category Section */
 .category-page {
   text-align: center;
   padding: 0;
@@ -64,7 +82,7 @@ body {
 
 .category-page h1 {
   font-size: 2rem;
-  color: #1b5e20; /* deep green */
+  color: #1b5e20;
   margin-bottom: 8px;
 }
 
@@ -74,16 +92,16 @@ body {
   margin-bottom: 25px;
 }
 
-/* 🛍️ Items Grid */
+/* Items Grid */
 .items-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   justify-items: center;
   padding: 0 5px;
 }
 
-/* 📦 Item Card */
+/* Item Card */
 .item-card {
   background-color: #ffffff;
   border-radius: 8px;
@@ -108,10 +126,9 @@ body {
   margin-bottom: 10px;
 }
 
-/* 🧾 Item Text */
 .item-card h3 {
   font-size: 1rem;
-  color: #2e7d32; /* strong green */
+  color: #2e7d32;
   margin-bottom: 1px;
 }
 
@@ -121,13 +138,14 @@ body {
   margin-bottom: 10px;
 }
 
-/* 🔘 Buttons */
+/* Item action buttons container */
 .buttons {
   display: flex;
   justify-content: center;
   gap: 8px;
 }
 
+/* Specific: Exchange and Buy buttons on item cards */
 .exchange-btn,
 .shop-btn {
   padding: 3px 12px;
@@ -137,39 +155,34 @@ body {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
+  display: inline-block;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .exchange-btn {
-  background-color: #2e7d32; /* strong green */
+  background-color: #2e7d32;
   color: #fff;
 }
-
 .exchange-btn:hover {
-  background-color: #1b5e20; /* deeper green */
+  background-color: #1b5e20;
   transform: scale(1.05);
 }
 
 .shop-btn {
-  background-color: #e8f5e9; /* light green background */
+  background-color: #e8f5e9;
   color: #2e7d32;
 }
-
 .shop-btn:hover {
-  background-color: #c8e6c9; /* softer hover green */
+  background-color: #c8e6c9;
   transform: scale(1.05);
 }
 
-/* 📱 Responsive */
+/* Responsive */
 @media (max-width: 768px) {
-  .category-page h1 {
-    font-size: 1.6rem;
-  }
+  .category-page h1 { font-size: 1.6rem; }
   .items-grid {
     gap: 10px;
-    grid-template-columns: repeat(2, 1fr); /* fewer columns on small screens */
+    grid-template-columns: repeat(2, 1fr);
   }
-  #searchInput {
-    width: 180px;
-  }
+  #searchInput { width: 180px; }
 }

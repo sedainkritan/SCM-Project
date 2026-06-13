@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Signup</title>
-  <!-- You can keep using login_page.css, or create a separate signup_page.css if you want -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Swap & Share</title>
   <link rel="stylesheet" href="login_page.css">
-  <!-- ✅ auth.js is in the same Loginpage folder -->
+  <link rel="stylesheet" href="../Header/header.css">
+  <link rel="stylesheet" href="../Header/footer.css">
   <script src="auth.js"></script>
 </head>
 <body>
+  <div id="header"></div>
+
   <div class="auth-container">
     <h2>Signup</h2>
-    <!-- ✅ Calls signup(event) from auth.js -->
     <form onsubmit="signup(event)">
       <div class="input-group">
         <input id="fullname" placeholder=" " required>
@@ -37,13 +40,15 @@
         <input type="checkbox" required> I agree to Terms & Conditions
       </label>
 
-      <button type="submit">Signup</button>
+      <button type="submit" class="auth-submit-btn">Signup</button>
 
-      <!-- ✅ Add link back to login page -->
-      <p style="margin-top:10px;">
-        Already have an account? <a href="login_page.html">Log In</a>
+      <p style="margin-top:10px; color:#1b3d2f; font-size:14px;">
+        Already have an account? <a href="login_page.html" class="link" style="display:inline;">Log In</a>
       </p>
     </form>
   </div>
+
+  <div id="footer"></div>
+  <script src="../Header/header.js"></script>
 </body>
 </html>

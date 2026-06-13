@@ -1,4 +1,12 @@
+/* ── CSS variables (required by header.css) ── */
 :root {
+  --card: #ffffff;
+  --radius: 12px;
+  --accent: #2f8b4f;
+  --accent-2: #1f5fa8;
+  --muted: #6b7280;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
   --bg-color: #f4fdf7;
   --card-bg: #ffffff;
   --primary: #2e7d32;
@@ -9,6 +17,17 @@
   --border: #c8e6c9;
   --shadow: rgba(0,0,0,0.08);
 }
+
+/* ── Prevent horizontal overflow (matches howItWorks_page.css) ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -81,6 +100,7 @@ body {
 }
 .tabs::-webkit-scrollbar { display: none; }
 
+/* Specific: tab buttons */
 .tab {
   flex: 1;
   padding: 10px;
@@ -111,7 +131,9 @@ body {
   border: 1px solid var(--accent-light);
   border-radius: 8px;
 }
-.add-review button {
+
+/* Specific: submit review button */
+.add-review .submit-review-btn {
   background: var(--primary);
   color: #fff;
   border: none;
@@ -119,12 +141,14 @@ body {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+  width: 100%;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.add-review button:hover {
+.add-review .submit-review-btn:hover {
   background: var(--primary-dark);
   transform: scale(1.05);
 }
+
 .star-selector span {
   font-size: 1.5rem;
   cursor: pointer;
@@ -193,7 +217,9 @@ body {
   gap: 10px;
   margin-top: 10px;
 }
-.review-actions button {
+
+/* Specific: like/dislike action buttons inside review cards */
+.review-actions .review-action-btn {
   border: none;
   background: var(--accent-bg);
   color: var(--primary);
@@ -202,7 +228,7 @@ body {
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
-.review-actions button:hover {
+.review-actions .review-action-btn:hover {
   background: var(--accent-light);
   transform: scale(1.05);
 }

@@ -108,8 +108,10 @@ function renderReviews(filter="all") {
     actions.className = "review-actions";
     const helpfulBtn = document.createElement("button");
     helpfulBtn.textContent = "Helpful";
+    helpfulBtn.className = "review-action-btn";
     const notHelpfulBtn = document.createElement("button");
     notHelpfulBtn.textContent = "Not Helpful";
+    notHelpfulBtn.className = "review-action-btn";
     actions.appendChild(helpfulBtn);
     actions.appendChild(notHelpfulBtn);
 

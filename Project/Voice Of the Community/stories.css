@@ -1,12 +1,29 @@
-/* 🌐 Global Variables */
+/* ── CSS variables (required by header.css) ── */
 :root {
-  --primary: #1b5e20;       /* deep green */
+  --card: #ffffff;
+  --radius: 12px;
   --accent: #2e7d32;        /* strong green */
+  --accent-2: #1f5fa8;
+  --accent-green: #2e7d32;  /* restore for compatibility */
+  --muted: #6b7280;         /* restore muted text */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --primary: #1b5e20;       /* deep green */
   --background: #f4fdf7;    /* soft eco-friendly background */
   --text: #1b3d2f;          /* earthy text */
   --card-bg: #ffffff;       /* clean white cards */
   --border: #c8e6c9;        /* soft green border */
   --shadow: rgba(0,0,0,0.08);
+}
+
+/* ── Prevent horizontal overflow (matches howItWorks_page.css) ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -64,31 +81,6 @@ body {
   height: 150px;
   border-radius: 8px;
   object-fit: cover;
-}
-
-button,
-.rate-btn {
-  margin-top: 30px;
-  padding: 10px 20px;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover,
-.rate-btn:hover {
-  background: var(--accent);
-  transform: scale(1.05);
-}
-
-.rate-link {
-  text-align: center;
-  margin-top: 20px;
 }
 
 /* =========================
@@ -320,7 +312,8 @@ button:hover,
 }
 
 .action-buttons button,
-.action-buttons .rate-btn {
+.action-buttons .rate-btn,
+.action-buttons .share-story-btn {
   flex: 1; /* same width */
   max-width: 220px;
   padding: 12px 20px;
@@ -336,8 +329,9 @@ button:hover,
 }
 
 .action-buttons button:hover,
-.action-buttons .rate-btn:hover {
-  background: var(--accent);
+.action-buttons .rate-btn:hover,
+.action-buttons .share-story-btn:hover {
+  background: var(--accent-green);
   transform: scale(1.05);
 }
 

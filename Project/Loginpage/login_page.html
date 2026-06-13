@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Swap & Share</title>
   <link rel="stylesheet" href="login_page.css">
-  <!-- ✅ Make sure auth.js is in the same folder (Loginpage) -->
+  <link rel="stylesheet" href="../Header/header.css">
+  <link rel="stylesheet" href="../Header/footer.css">
   <script src="auth.js"></script>
 </head>
 <body>
+  <div id="header"></div>
+
   <div class="auth-container">
     <h2>Login</h2>
-    <!-- ✅ Calls login(event) from auth.js -->
     <form onsubmit="login(event)">
       <div class="input-group">
         <input type="text" id="loginEmail" placeholder=" " required>
@@ -20,12 +24,14 @@
         <label>Password</label>
       </div>
       <label class="checkbox"><input type="checkbox" id="remember"> Remember Me</label>
-      <button type="submit">Login</button>
+      <button type="submit" class="auth-submit-btn">Login</button>
 
-      <!-- ✅ Correct links to other pages -->
       <a href="forgetpsw.html" class="link">Forgot Password?</a>
       <a href="sign-uppage.html" class="link">Create Account</a>
     </form>
   </div>
+
+  <div id="footer"></div>
+  <script src="../Header/header.js"></script>
 </body>
 </html>
