@@ -8,7 +8,7 @@
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Prevent horizontal overflow (matches howItWorks_page.css) ── */
+/* ── Prevent horizontal overflow ── */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -17,7 +17,6 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
-
 
 /* Global Styles */
 body {
@@ -46,10 +45,8 @@ body {
   outline: none;
   transition: border-color 0.3s ease;
 }
-
 #searchInput:focus { border-color: #2e7d32; }
 
-/* Specific: search button in category pages */
 .search-container .search-submit-btn {
   padding: 8px 14px;
   background-color: #2e7d32;
@@ -111,6 +108,8 @@ body {
   max-width: 200px;
   text-align: center;
   padding: 12px;
+  opacity: 0; /* start hidden */
+  animation: fadeUp 0.6s var(--ease) forwards;
 }
 
 .item-card:hover {
@@ -145,7 +144,6 @@ body {
   gap: 8px;
 }
 
-/* Specific: Exchange and Buy buttons on item cards */
 .exchange-btn,
 .shop-btn {
   padding: 3px 12px;
@@ -185,4 +183,12 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
   #searchInput { width: 180px; }
+}
+
+/* =========================
+   Animations
+   ========================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

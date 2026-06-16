@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Start Swap</title>
+  <link rel="stylesheet" href="startSwap.css">
+  <link rel="stylesheet" href="../Header2/header.css">
+  <link rel="stylesheet" href="../Header2/footer.css">
+</head>
+<body>
+    <div id="header"></div>
+  <section class="startswap-page">
+    <h1>Start Swapping</h1>
+    <form id="swapForm">
+      <label for="itemName">Item Name:</label>
+      <input type="text" id="itemName" required>
+
+      <label for="category">Category:</label>
+      
+    <select id="category" required>
+  <option value="books-media">Books & Media</option>
+  <option value="electronics-accessories">Electronics Accessories</option>
+  <option value="clothing">Clothing & Accessories</option>
+  <option value="outdoor-travel">Outdoor & Travel</option>
+  <option value="music">Musical Instruments</option>
+  <option value="furniture">Furniture & Home Décor</option>
+  <option value="health">Health & Personal Care</option>
+  <option value="children">Children & Baby</option>
+  <option value="office">Office & Work Supplies</option>
+  <option value="pets">Pet Supplies</option>
+  <option value="arts">Arts & Crafts</option>
+  <option value="automotive">Automotive</option>
+  <option value="notes">Student’s Note</option>
+  <option value="fitness">Fitness</option>
+  <option value="sports">Sports</option>
+</select>
+
+
+      <label for="description">Description:</label>
+      <textarea id="description" required></textarea>
+
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" accept="image/*" required>
+      <div id="preview"></div>
+
+      <button type="submit">Publish Item</button>
+    </form>
+  </section>
+<script src="startSwap.js"></script>
+<div id="footer"></div>
+  <script src="../Header2/header.js"></script>
+</body>
+</html>

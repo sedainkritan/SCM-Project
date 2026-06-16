@@ -1,38 +1,47 @@
-const searchInput = document.getElementById('searchInput');
-const itemCards = document.querySelectorAll('.item-card');
-const message = document.getElementById('message');
+<input type="text" id="searchInput" placeholder="Search items...">
+<p id="message"></p>
 
-function filterItems() {
-  const searchText = searchInput.value.toLowerCase().trim();
-  let visibleCount = 0;
+<div class="items-grid" id="itemsContainer"></div>
 
-  itemCards.forEach(card => {
-    const name = card.querySelector('h3').textContent.toLowerCase();
-    const description = card.querySelector('p').textContent.toLowerCase();
+<script src="../shared/browseItems.js"></script>
+<script>
+  // Load items first
+  loadItems("books");
 
-    const matches = name.includes(searchText) || description.includes(searchText);
+  // Then set up search
+  const searchInput = document.getElementById('searchInput');
+  const message = document.getElementById('message');
 
-    card.style.display = matches ? '' : 'none';
-    if (matches) visibleCount++;
-  });
+  function filterItems() {
+    const searchText = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
 
-  // Show message if nothing found
-  if (visibleCount === 0 && searchText !== '') {
-    message.textContent = `No items found for "${searchInput.value}"`;
-  } else {
-    message.textContent = '';
+    // Re‑query item cards each time (important for dynamic items)
+    const itemCards = document.querySelectorAll('.item-card');
+
+    itemCards.forEach(card => {
+      const name = card.querySelector('h3').textContent.toLowerCase();
+      const description = card.querySelector('p').textContent.toLowerCase();
+
+      const matches = name.includes(searchText) || description.includes(searchText);
+
+      card.style.display = matches ? '' : 'none';
+      if (matches) visibleCount++;
+    });
+
+    // Show message if nothing found
+    if (visibleCount === 0 && searchText !== '') {
+      message.textContent = `No items found for "${searchInput.value}"`;
+    } else {
+      message.textContent = '';
+    }
   }
-}
 
-// Search as you type (no button needed)
-searchInput.addEventListener('input', filterItems);
+  // Search as you type
+  searchInput.addEventListener('input', filterItems);
 
-// Button click
-function searchItems() {
-  filterItems();
-}
-
-// Enter key
-searchInput.addEventListener('keydown', e => {
-  if (e.key === 'Enter') filterItems();
-});
+  // Enter key
+  searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') filterItems();
+  });
+</script>

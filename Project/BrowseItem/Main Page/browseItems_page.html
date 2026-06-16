@@ -96,6 +96,14 @@
       </a>
     </div>
   </section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".discover-item");
+    items.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.2}s`;
+    });
+  });
+</script>
 
   <div id="footer"></div>
   <script src="../Header2/header.js"></script>

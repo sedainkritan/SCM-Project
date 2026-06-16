@@ -127,8 +127,49 @@
   </section>
   <div id="footer"></div>
 
+  <script>
+function loadItems(category) {
+  let items = JSON.parse(localStorage.getItem("swapItems")) || [];
+  let container = document.querySelector(".items-grid");
+
+  // Keep your existing static items, but also add new ones dynamically
+  items.filter(i => i.category === category).forEach(i => {
+    let card = document.createElement("div");
+    card.className = "item-card";
+    card.innerHTML = `
+      <img src="../Start Swapping/${i.image}" alt="${i.name}">
+      <h3>${i.name}</h3>
+      <p>${i.description}</p>
+      <button class="exchange-btn">Exchange</button>
+      <button class="shop-btn">Buy</button>
+    `;
+    container.appendChild(card);
+  });
+}
+
+// Call it for Books & Media
+loadItems("books-media");
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".item-card");
+    items.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.2}s`;
+    });
+  });
+</script>
+
+
   <!-- Link JS -->
   <script src="books-media.js"></script>
   <script src="../Header2/header.js"></script>
+
+
+  <script src="../browseItem.js"></script>
+<script>
+  loadItems("books-media"); 
+</script>
+
 </body>
 </html>

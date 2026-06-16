@@ -61,5 +61,14 @@
 <div id="footer"></div>
 <script src="faq.js"></script>
 <script src="../Header/header.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".faq-item");
+    items.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.2}s`;
+    });
+  });
+</script>
+
 </body>
 </html>
