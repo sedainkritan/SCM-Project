@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "/Project/Homepage/home_page.html"
+  status = 200
