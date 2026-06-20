@@ -15,7 +15,12 @@ const categoryMap = {
   'children': 'children',
   'office': 'office',
   'pets': 'pets',
-  'electronics-accessories': 'electronics'
+  'electronics-accessories': 'electronics',
+  'arts': 'arts',
+  'automotive': 'automotive',
+  'notes': 'notes',
+  'fitness': 'fitness',
+  'sports': 'sports'
 };
 
 function filterItems() {
