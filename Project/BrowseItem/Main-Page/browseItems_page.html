@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Items - Swap & Share</title>
+  <link rel="stylesheet" href="/Project/BrowseItem/Main-Page/browseItems_page.css">
+  <link rel="stylesheet" href="/Project/BrowseItem/Header2/header.css">
+  <link rel="stylesheet" href="/Project/BrowseItem/Header2/footer.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="browse-container">
+    <div class="search-bar">
+      <input type="text" placeholder="Search for items..." />
+      <select>
+        <option value="all">All Categories</option>
+        <option value="books-media">Books & Media</option>
+        <option value="clothing">Clothing & Accessories</option>
+        <option value="outdoor-travel">Outdoor & Travel</option>
+        <option value="music">Musical Instruments</option>
+        <option value="furniture">Furniture & Home Décor</option>
+        <option value="health">Health & Personal Care</option>
+        <option value="children">Children & Baby</option>
+        <option value="office">Office & Work Supplies</option>
+        <option value="pets">Pet Supplies</option>
+        <option value="electronics-accessories">Electronics Accessories</option>
+      </select>
+      <button class="find-items-btn">Find Items</button>
+    </div>
+  </section>
+
+  <section class="discover-section">
+    <h2>Browse Our Featured Exchanges</h2>
+    <div class="discover-grid">
+      <a href="/Project/BrowseItem/Electronics-Accesories/electronics-accessories.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/electronics.jpeg" alt="Electronics Accessories">
+        <h3>Electronics Accessories</h3>
+      </a>
+      <a href="/Project/BrowseItem/Books-And-Media/books-media.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/books.png" alt="Books & Media">
+        <h3>Books & Media</h3>
+      </a>
+      <a href="/Project/BrowseItem/Clothing-And-Accessories/clothing.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/clothing.png" alt="Clothing & Accessories">
+        <h3>Clothing & Accessories</h3>
+      </a>
+      <a href="/Project/BrowseItem/Outdoor-And-Travel/outdoor-travel.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/travelling.png" alt="Outdoor & Travel">
+        <h3>Outdoor & Travel</h3>
+      </a>
+      <a href="/Project/BrowseItem/Music/music.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/musical.png" alt="Musical Instruments">
+        <h3>Musical Instruments</h3>
+      </a>
+      <a href="/Project/BrowseItem/Furniture-And-Home-Deco/furniture.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/homedecor.png" alt="Furniture & Home Décor">
+        <h3>Furniture & Home Décor</h3>
+      </a>
+      <a href="/Project/BrowseItem/Health-And-Personal-Care/health.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/health&care.png" alt="Health & Personal Care">
+        <h3>Health & Personal Care</h3>
+      </a>
+      <a href="/Project/BrowseItem/Children-And-Baby/children.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/childrentoys.png" alt="Children & Baby">
+        <h3>Children & Baby</h3>
+      </a>
+      <a href="/Project/BrowseItem/Office-And-Work-Supplies/office.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/office.png" alt="Office & Work Supplies">
+        <h3>Office & Work Supplies</h3>
+      </a>
+      <a href="/Project/BrowseItem/Pet-Supplies/pets.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/pet.png" alt="Pet Supplies">
+        <h3>Pet Supplies</h3>
+      </a>
+      <a href="/Project/BrowseItem/Arts-And-Crafts/arts.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/craft.jpg" alt="Art & Crafts">
+        <h3>Arts & Crafts</h3>
+      </a>
+      <a href="/Project/BrowseItem/Automotive/automotive.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/automotive.jpg" alt="Automotive">
+        <h3>Automotive</h3>
+      </a>
+      <a href="/Project/BrowseItem/Student-Notes/notes.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/nnotes.jpg" alt="Student Notes">
+        <h3>Student's Note</h3>
+      </a>
+      <a href="/Project/BrowseItem/Fitness/fitness.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/fitness.jpg" alt="Fitness">
+        <h3>Fitness</h3>
+      </a>
+      <a href="/Project/BrowseItem/Sports/sports.html" class="discover-item">
+        <img src="/Project/BrowseItem/Main-Page/sports.jpg" alt="Sports">
+        <h3>Sports</h3>
+      </a>
+    </div>
+  </section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".discover-item");
+    items.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.2}s`;
+    });
+  });
+</script>
+
+  <div id="footer"></div>
+  <script src="/Project/BrowseItem/Header2/header.js"></script>
+  <script src="/Project/Homepage/home_page.js"></script>
+</body>
+</html>

@@ -128,6 +128,6 @@ function logout() {
 })();
 
 // Example: after a successful exchange
-let user = JSON.parse(localStorage.getItem("sessionUser"));
-user.exchanges = (user.exchanges || 0) + 1;
-localStorage.setItem("sessionUser", JSON.stringify(user));
+// let user = JSON.parse(localStorage.getItem("sessionUser"));
+// user.exchanges = (user.exchanges || 0) + 1;
+// localStorage.setItem("sessionUser", JSON.stringify(user));
