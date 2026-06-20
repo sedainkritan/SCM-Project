@@ -167,4 +167,8 @@ nav a.active { color: var(--accent-2); font-weight:600; }
 /* Tablets */
 @media (max-width: 980px) {
   .hero { flex-direction: column; padding: 28px; }
-  .hero .right { width: 100%; order: -1; justify-content: center;
+  .hero .right { width: 100%; order: -1; justify-content: center; }
+  .hero h1 { font-size: 34px; }
+}
+
+/*
