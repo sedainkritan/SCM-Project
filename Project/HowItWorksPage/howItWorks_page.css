@@ -163,17 +163,81 @@ footer p {
 }
 
 /* =========================
-   Responsive Breakpoints
+   Responsive adjustments
    ========================= */
-@media (max-width: 980px) {
-  .steps-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-  .how-container h1 { font-size: clamp(20px, 5vw, 28px); }
+
+/* Large tablets / small laptops */
+@media (max-width: 1200px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .benefits ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
-@media (max-width: 520px) {
-  header { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .steps-grid { grid-template-columns: 1fr; padding: 0 10px; }
-  .benefits { padding: 24px 16px; }
-  .benefits h2 { font-size: 20px; }
-  .benefits li { font-size: 14px; }
+/* Tablets */
+@media (max-width: 980px) {
+  .how-container {
+    padding: 20px;
+    text-align: center;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .step {
+    padding: 16px;
+  }
+  .benefits ul {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .benefits h2 {
+    font-size: 24px;
+  }
 }
+
+/* Phones */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 26px;
+  }
+  .how-container p {
+    font-size: 16px;
+  }
+  .step h3 {
+    font-size: 18px;
+  }
+  .step p {
+    font-size: 15px;
+  }
+  .benefits h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+  .benefits ul {
+    padding-left: 0;
+  }
+  .benefits li {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  body {
+    padding: 16px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .step-icon {
+    font-size: 28px;
+  }
+}
+
