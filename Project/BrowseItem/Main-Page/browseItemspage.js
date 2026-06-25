@@ -20,7 +20,10 @@ const categoryMap = {
   'automotive': 'automotive',
   'notes': 'notes',
   'fitness': 'fitness',
-  'sports': 'sports'
+  'sports': 'sports',
+  'books': 'books',
+  'media': 'media',
+  'notes': 'notes'
 };
 
 function filterItems() {
